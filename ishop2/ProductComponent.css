@@ -1,0 +1,35 @@
+.ProductComponent {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.ProductComponent .Img {
+  max-width: 50%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+}
+
+.ProductComponent .Price {
+  font-weight: 700;
+}
+
+.ProductComponent .Quantity {
+  font-size: 14px;
+}
+
+.ProductComponent .Title {
+  text-decoration: none;
+  color: #326fbb;
+}
+
+.ProductComponent .Delete_item {
+  border: none;
+  padding: 5px 10px;
+  background-color: #a8eb12;
+  cursor: pointer;
+}

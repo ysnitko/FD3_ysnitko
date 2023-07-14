@@ -1,0 +1,40 @@
+.ProductsComponent {
+        font-family: 'Roboto', sans-serif;     
+}
+
+.ProductsComponent .Products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 180px);
+        justify-content: space-between;
+        padding: 10px;
+        margin: 0;
+        gap: 10px;
+}
+
+.ProductsComponent .Products .Product {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-between;
+        text-align: center;
+        padding: 5px;
+}
+
+.ProductsComponent .Products .Img {
+        width: 100%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+}
+
+.ProductsComponent .Products .Price {
+        font-weight: 700;
+}
+
+.ProductsComponent .Products .Quantity {
+        font-size: 14px;
+}
+
+.ProductsComponent .Products .Title {
+        text-decoration: none;
+        color: #326fbb;
+}
