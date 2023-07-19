@@ -1,18 +1,21 @@
-﻿import React from "react";
+﻿import React from 'react';
 
-function RainBowFrame({ colors }) {
+const RainbowFrame = (props) => {
+  const { colors } = props;
+  if (colors.length === 0) {
+    return <div>{props.children}</div>;
+  }
   return (
     <div
       style={{
-        border: `solid ${colors[0]} 1px `,
-        margin: "5px",
-        textAlign: "center",
+        border: `2px solid ${colors[0]}`,
+        padding: '5px',
+        textAlign: 'center',
       }}
-      className="Block"
     >
-      Hello!
+      <RainbowFrame colors={colors.slice(1)}>{props.children}</RainbowFrame>
     </div>
   );
-}
+};
 
-export default RainBowFrame;
+export default RainbowFrame;

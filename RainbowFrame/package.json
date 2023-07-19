@@ -1,7 +1,7 @@
 {
-  "name": "y",
+  "name": "rainbow",
   "version": "1.0.0",
-  "description": "блок голосования",
+  "description": "rainbow",
   "main": "App.js",
   "scripts": {
     "build": "webpack",
