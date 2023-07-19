@@ -395,13 +395,13 @@ var _reactDom = __webpack_require__(7);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _BlockComponent = __webpack_require__(15);
+var _ResultComponent = __webpack_require__(15);
 
-var _BlockComponent2 = _interopRequireDefault(_BlockComponent);
+var _ResultComponent2 = _interopRequireDefault(_ResultComponent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_BlockComponent2.default, null), document.getElementById("container"));
+_reactDom2.default.render(_react2.default.createElement(_ResultComponent2.default, null), document.getElementById('container'));
 
 /***/ }),
 /* 5 */
@@ -30476,22 +30476,18 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _RainBowFrame = __webpack_require__(16);
+var _Br2jsx = __webpack_require__(16);
 
-var _RainBowFrame2 = _interopRequireDefault(_RainBowFrame);
+var _Br2jsx2 = _interopRequireDefault(_Br2jsx);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var BlockComponent = function BlockComponent() {
-  var colors = ['red', 'orange', 'yellow', 'green', '#00BFF', 'blue', 'purple'];
-  return _react2.default.createElement(
-    _RainBowFrame2.default,
-    { colors: colors },
-    'hello!'
-  );
+var ResultComponent = function ResultComponent() {
+  var text = 'первый<br>второй<br/>третий<br/>последний';
+  return _react2.default.createElement(_Br2jsx2.default, { text: text });
 };
 
-exports.default = BlockComponent;
+exports.default = ResultComponent;
 
 /***/ }),
 /* 16 */
@@ -30510,34 +30506,23 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var RainbowFrame = function RainbowFrame(props) {
-  var colors = props.colors;
+var Br2jsx = function Br2jsx(props) {
+  var text = props.text;
 
-  if (colors.length === 0) {
-    return _react2.default.createElement(
-      'div',
-      null,
-      props.children
-    );
-  }
+  var textDiv = text.split('<br>').join(' ').split('<br/>').join(' ').split(' ');
+  console.log(textDiv);
+  var element = textDiv.map(function (elem, index) {
+    return [elem, _react2.default.createElement('br', { key: index })];
+  });
+
   return _react2.default.createElement(
     'div',
-    {
-      style: {
-        border: '2px solid ' + colors[0],
-        padding: '5px',
-        textAlign: 'center'
-      }
-    },
-    _react2.default.createElement(
-      RainbowFrame,
-      { colors: colors.slice(1) },
-      props.children
-    )
+    null,
+    element
   );
 };
 
-exports.default = RainbowFrame;
+exports.default = Br2jsx;
 
 /***/ })
 /******/ ]);
