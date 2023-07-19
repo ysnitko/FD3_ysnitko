@@ -1,6 +1,6 @@
-﻿import React from "react";
-import ReactDOM from "react-dom";
+﻿import React from 'react';
+import ReactDOM from 'react-dom';
 
-import BlockComponent from "./components/BlockComponent";
+import ResultComponent from './components/ResultComponent';
 
-ReactDOM.render(<BlockComponent />, document.getElementById("container"));
+ReactDOM.render(<ResultComponent />, document.getElementById('container'));

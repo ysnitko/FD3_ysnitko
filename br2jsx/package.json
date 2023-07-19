@@ -1,7 +1,7 @@
 {
-  "name": "rainbow",
+  "name": "Br2jsx",
   "version": "1.0.0",
-  "description": "rainbow",
+  "description": "Br2jsx",
   "main": "App.js",
   "scripts": {
     "build": "webpack",
