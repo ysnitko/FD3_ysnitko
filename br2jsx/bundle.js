@@ -30509,14 +30509,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Br2jsx = function Br2jsx(props) {
   var text = props.text;
 
-  var textDiv = text.split('<br>').join(' ').split('<br/>').join(' ').split(' ');
-  console.log(textDiv);
+  var textDiv = text.split("<br>").join(" ").split("<br/>").join(" ").split(" ");
+
   var element = textDiv.map(function (elem, index) {
-    return [elem, _react2.default.createElement('br', { key: index })];
+    return [elem, _react2.default.createElement("br", { key: index })];
   });
 
+  var lastElement = element[element.length - 1];
+  lastElement.splice(1, 1);
+
   return _react2.default.createElement(
-    'div',
+    "div",
     null,
     element
   );
