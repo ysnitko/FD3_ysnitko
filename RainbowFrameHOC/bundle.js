@@ -30476,18 +30476,27 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _RainBowFrame = __webpack_require__(16);
+var _withRainbowFrame = __webpack_require__(16);
 
-var _RainBowFrame2 = _interopRequireDefault(_RainBowFrame);
+var _DoubleButton = __webpack_require__(17);
+
+var _DoubleButton2 = _interopRequireDefault(_DoubleButton);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var BlockComponent = function BlockComponent() {
   var colors = ['red', 'orange', 'yellow', 'green', '#00BFF', 'blue', 'purple'];
+  var FramedDoubleButton = (0, _withRainbowFrame.withRainbowFrame)(colors)(_DoubleButton2.default);
   return _react2.default.createElement(
-    _RainBowFrame2.default,
-    { colors: colors },
-    'hello!'
+    FramedDoubleButton,
+    {
+      caption1: '\u044F \u0438\u0437 \u043B\u0435\u0441\u0443',
+      caption2: '\u043C\u043E\u0440\u043E\u0437',
+      cbPressed: function cbPressed(num) {
+        return alert(num);
+      }
+    },
+    '\u0432\u044B\u0448\u0435\u043B, \u0431\u044B\u043B \u0441\u0438\u043B\u044C\u043D\u044B\u0439'
   );
 };
 
@@ -30495,6 +30504,48 @@ exports.default = BlockComponent;
 
 /***/ }),
 /* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.withRainbowFrame = undefined;
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var withRainbowFrame = function withRainbowFrame(colors) {
+  return function (Component) {
+    return function (props) {
+      var content = _react2.default.createElement(Component, props);
+      colors.forEach(function (color) {
+        content = _react2.default.createElement(
+          'div',
+          {
+            style: {
+              border: '2px solid ' + color,
+              padding: '10px',
+              textAlign: 'center'
+            }
+          },
+          content
+        );
+      });
+      return content;
+    };
+  };
+};
+
+exports.withRainbowFrame = withRainbowFrame;
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30518,47 +30569,54 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var RainbowFrame = function (_React$Component) {
-  _inherits(RainbowFrame, _React$Component);
+var DoubleButton = function (_React$Component) {
+  _inherits(DoubleButton, _React$Component);
 
-  function RainbowFrame() {
-    _classCallCheck(this, RainbowFrame);
+  function DoubleButton() {
+    var _ref;
 
-    return _possibleConstructorReturn(this, (RainbowFrame.__proto__ || Object.getPrototypeOf(RainbowFrame)).apply(this, arguments));
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, DoubleButton);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DoubleButton.__proto__ || Object.getPrototypeOf(DoubleButton)).call.apply(_ref, [this].concat(args))), _this), _this.handleClick1 = function () {
+      _this.props.cbPressed(1);
+    }, _this.handleClick2 = function () {
+      _this.props.cbPressed(2);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(RainbowFrame, [{
+  _createClass(DoubleButton, [{
     key: "render",
     value: function render() {
-      var colors = this.props.colors;
-
-      var content = this.props.children;
-
-      colors.forEach(function (color) {
-        content = _react2.default.createElement(
-          "div",
-          {
-            style: {
-              border: "2px solid " + color,
-              padding: "5px",
-              textAlign: "center"
-            }
-          },
-          content
-        );
-      });
       return _react2.default.createElement(
         "div",
         null,
-        content
+        _react2.default.createElement("input", {
+          type: "button",
+          value: this.props.caption1,
+          onClick: this.handleClick1
+        }),
+        "\xA0",
+        this.props.children,
+        "\xA0",
+        _react2.default.createElement("input", {
+          type: "button",
+          value: this.props.caption2,
+          onClick: this.handleClick2
+        })
       );
     }
   }]);
 
-  return RainbowFrame;
+  return DoubleButton;
 }(_react2.default.Component);
 
-exports.default = RainbowFrame;
+exports.default = DoubleButton;
 
 /***/ })
 /******/ ]);
