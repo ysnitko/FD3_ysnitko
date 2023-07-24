@@ -1,6 +1,19 @@
-﻿import React from "react";
-import ReactDOM from "react-dom";
+﻿import React from 'react';
+import { withRainbowFrame } from './components/withRainbowFrame';
+import DoubleButton from './components/DoubleButton';
 
-import BlockComponent from "./components/BlockComponent";
+const App = () => {
+  let colors = ['red', 'orange', 'yellow', 'green', 'grey', 'blue', 'purple'];
+  let FramedDoubleButton = withRainbowFrame(colors)(DoubleButton);
+  return (
+    <FramedDoubleButton
+      caption1="я из лесу"
+      caption2="мороз"
+      cbPressed={(num) => alert(num)}
+    >
+      вышел, был сильный
+    </FramedDoubleButton>
+  );
+};
 
-ReactDOM.render(<BlockComponent />, document.getElementById("container"));
+export default App;

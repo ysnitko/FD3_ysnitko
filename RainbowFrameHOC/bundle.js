@@ -395,13 +395,13 @@ var _reactDom = __webpack_require__(7);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _BlockComponent = __webpack_require__(15);
+var _App = __webpack_require__(15);
 
-var _BlockComponent2 = _interopRequireDefault(_BlockComponent);
+var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_BlockComponent2.default, null), document.getElementById("container"));
+_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('container'));
 
 /***/ }),
 /* 5 */
@@ -30484,7 +30484,7 @@ var _DoubleButton2 = _interopRequireDefault(_DoubleButton);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var BlockComponent = function BlockComponent() {
+var App = function App() {
   var colors = ['red', 'orange', 'yellow', 'green', '#00BFF', 'blue', 'purple'];
   var FramedDoubleButton = (0, _withRainbowFrame.withRainbowFrame)(colors)(_DoubleButton2.default);
   return _react2.default.createElement(
@@ -30500,7 +30500,7 @@ var BlockComponent = function BlockComponent() {
   );
 };
 
-exports.default = BlockComponent;
+exports.default = App;
 
 /***/ }),
 /* 16 */
