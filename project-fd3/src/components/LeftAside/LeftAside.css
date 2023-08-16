@@ -1,0 +1,44 @@
+.left-navigation {
+  display: flex;
+  padding: 8px;
+  gap: 30px;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(
+    to top,
+    transparent 60%,
+    rgba(25, 104, 117, 0.5) 100%,
+    rgba(229, 241, 242, 1) 0%
+  );
+}
+
+.left-navigation button {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.home-btn {
+  background-image: url(../../helpers/img/home.svg);
+}
+
+.favorites-btn-none {
+  background-image: url(../../helpers/img/favourite-none.svg);
+}
+
+.favorites-add-btn {
+  background-image: url(../../helpers/img/favourite-add.svg);
+}
+
+@media screen and (min-width: 320px) and (max-width: 649px) {
+  .left-navigation {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 15px;
+  }
+}
