@@ -1,8 +1,8 @@
 {
   "name": "project-fd3",
-  "homepage": "https://ysnitko.github.io/FD3_ysnitko/project-fd3",
   "version": "0.1.0",
   "private": false,
+
 
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
